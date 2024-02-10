@@ -3,7 +3,7 @@
 Image Generator AI is an application that allows users to generate images from text descriptions using AI.
 
 
-![Logo](https://github.com/Deobap73/AI-image-generator/blob/3c9fb09ec928902a150f532077f6510499b25659/client/src/assets/imageAIGeneratorLogo.png)
+![Logo](https://github.com/Deobap73/AI-image-generator-Server-Side/blob/856ede120fd42ad84336978e361990389bbe9b98/images/imageAIGeneratorLogo.png)
 
 ## Features
 
@@ -103,8 +103,6 @@ npm run client
 
 ### Screenshots
 
-![App_Screenshot](https://github.com/Deobap73/AI-image-generator/blob/main/client/src/assets/ImageAIGeneratorHomePage.png)
-![App_Screenshot2](https://github.com/Deobap73/AI-image-generator/blob/d9fd3c4d379a7a6a61c1caed46c357492bcf6a70/client/src/assets/ImageAIGeneratorLoginPage.png)
-![App_Screenshot3](https://github.com/Deobap73/AI-image-generator/blob/d9fd3c4d379a7a6a61c1caed46c357492bcf6a70/client/src/assets/ImageAIGeneratorCreateAccountPage.png)
-![App_Screenshot3](https://github.com/Deobap73/AI-image-generator/blob/d9fd3c4d379a7a6a61c1caed46c357492bcf6a70/client/src/assets/ImageAIGeneratorGererateImagePage.png)
+![App_Screenshot](https://github.com/Deobap73/AI-image-generator-Server-Side/blob/856ede120fd42ad84336978e361990389bbe9b98/images/ImageAIGeneratorHomePage.png)
+
 
