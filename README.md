@@ -2,109 +2,79 @@
 
 Image Generator AI is an application that allows users to generate images from text descriptions using AI.
 
-
-![Logo](https://github.com/Deobap73/AI-image-generator/blob/3c9fb09ec928902a150f532077f6510499b25659/client/src/assets/imageAIGeneratorLogo.png)
-
-## Features
-
-- AI-powered image generation using DALL-E
-- Generate images by entering text prompts
-- Browse and download images created by other users
-- User authentication to save generated images
-
-
-## Built With
-
-- React
-- Node.js
-- Express
-- MongoDB
-- OpenAI DALL-E
-- Cloudinary
-- Figma
-- photoshop
 ## Team
 
 - [Oleksandra](https://github.com/oleksandra-github)
 - [Ali](https://github.com/NULL0M)
 - [Alejandro](https://github.com/neptuneboy666)
 - [Deolindo](https://github.com/Deobap73)
-## Color Documentation
 
-| Color             | Hexadecimal                                                |
-| ----------------- | ---------------------------------------------------------------- |
-| Color 1           | ![#fff](https://via.placeholder.com/10/fff?text=+) #fff (var(--color-white)) |
-| Color 2           | ![#000](https://via.placeholder.com/10/000?text=+) #000 (var(--color-black)) |
-| Color 3           | ![#000](https://via.placeholder.com/10/000?text=+) #000 (inherit) |
-| Color 4           | ![#919191](https://via.placeholder.com/10/919191?text=+) #919191 (var(--fontcolorforgenerator)) |
-| Color 5           | ![#c7f80d](https://via.placeholder.com/10/c7f80d?text=+) #c7f80d (var(--color-menu-event)) |
-| Color 6           | ![#1e1e1e](https://via.placeholder.com/10/1e1e1e?text=+) #1e1e1e (var(--color-gray-100)) |
-| Color 7           | ![#0b0d0e](https://via.placeholder.com/10/0b0d0e?text=+) #0b0d0e (var(--color-gray-200)) |
-| Color 8           | ![#242424](https://via.placeholder.com/10/242424?text=+) #242424 (var(--color-gray-300)) |
+![Logo](https://github.com/NULL0M/image-gen/blob/3c9fb09ec928902a150f532077f6510499b25659/client/src/assets/imageAIGeneratorLogo.png)
 
-| Background Color 1 | Hexadecimal                                                |
-| ------------------- | ---------------------------------------------------------------- |
-| Background Color 2 | ![#d9d9d9](https://via.placeholder.com/10/d9d9d9?text=+) #d9d9d9 (var(--color-gainsboro)) |
-| Background Color 3 | ![#0000](https://via.placeholder.com/10/0000?text=+) transparent |
-| Background Color 4 | ![#2c2c2c](https://via.placeholder.com/10/2c2c2c?text=+) #2c2c2c (var(--labelbacground)) |
-| Background Color 5 | ![#0b0d0e](https://via.placeholder.com/10/0b0d0e?text=+) #0b0d0e (var(--color-gray-200)) |
-| Background Color 6 | ![#242424](https://via.placeholder.com/10/242424?text=+) #242424 (var(--color-gray-300)) |
-| Background Color 7 | ![#55650a](https://via.placeholder.com/10/55650a?text=+) #55650a (var(--color-menu-event-transition)) |
+# Server Documentation
 
-## Functionalities
+## Introduction
 
-- Real-time preview
-- Full-screen mode
+This is the server responsible for providing an API to interact with the image generation service and user management. It is built using Node.js, Express.js, and MongoDB, integrating services such as OpenAI and Cloudinary.
 
+## Configuration and Installation
 
-## Roadmap
+1. Clone the server repository.
+2. Install dependencies using `npm install`.
+3. Create a `.env` file in the root of the server and configure the environment variables.
 
-- Improve browser support
-- Add more integrations
+## Project Architecture
 
+The server follows an MVC (Model-View-Controller) architecture, with routing logic in separate files and data manipulation in MongoDB models.
 
-### Prerequisites
+## Environment Configuration
 
-- Node.js
-- NPM
+- Express.js: Used as the web framework for Node.js.
+- dotenv: For loading environment variables from the `.env` file.
+- MongoDB: NoSQL database used for storing user and post data.
+- OpenAI: Artificial intelligence service used for image generation.
+- Cloudinary: Image hosting service in the cloud.
 
-### Installation
+## Key Features
 
-1. Clone the repo
+1. **Image Generation (DALL-E)**
 
-    ```bash
-    git clone git@github.com:Deobap73/AI-image-generator.git
-    ```
+   - `GET /api/v1/dalle`: Returns a welcome message.
+   - `POST /api/v1/dalle`: Generates an image based on the provided prompt.
 
-2. Install server NPM packages
+2. **Post Management**
 
-    ```bash
-    npm install
-    ```
+   - `GET /api/v1/post/user/:userId`: Returns all posts of a specific user.
+   - `GET /api/v1/post`: Returns all posts.
+   - `POST /api/v1/post`: Creates a new post.
 
-3. Install client NPM packages
+3. **User Authentication**
+   - `POST /api/v1/user/register`: Registers a new user.
+   - `POST /api/v1/user/login`: Authenticates a user and generates a JWT token.
+   - `GET /api/v1/user/users/:username`: Returns information about a specific user.
+   - `POST /api/v1/reset-password/forgot-password`: Sends a password reset token to the user's email.
+   - `POST /api/v1/reset-password/reset-password`: Resets the user's password based on the provided token.
 
-    ```bash
-    cd client
-    npm install
-    ```
+## Code Structure
 
-4. Add environment variables
+- `index.js`: Entry point of the server, configures Express and defines routes.
+- `middleware/auth.js`: Middleware to verify JWT authentication tokens.
+- `mongodb/connect.js`: Establishes connection with MongoDB.
+- `mongodb/models/post.js` and `mongodb/models/Users.js`: MongoDB data models for posts and users.
+- `routes/*.js`: Route files for different server functionalities.
 
-### Development
+## Security
 
-```bash
-# Run server
-npm run server
+- The server uses JWT tokens for user authentication.
+- User passwords are securely stored in the database after being encrypted using bcrypt.
 
-# Run client
-npm run client
- ```
+## Error Handling
 
-### Screenshots
+- The server returns appropriate HTTP status codes and descriptive messages in case of errors.
+- Errors are handled appropriately in each route and middleware.
 
-![App_Screenshot](https://github.com/Deobap73/AI-image-generator/blob/main/client/src/assets/ImageAIGeneratorHomePage.png)
-![App_Screenshot2](https://github.com/Deobap73/AI-image-generator/blob/d9fd3c4d379a7a6a61c1caed46c357492bcf6a70/client/src/assets/ImageAIGeneratorLoginPage.png)
-![App_Screenshot3](https://github.com/Deobap73/AI-image-generator/blob/d9fd3c4d379a7a6a61c1caed46c357492bcf6a70/client/src/assets/ImageAIGeneratorCreateAccountPage.png)
-![App_Screenshot3](https://github.com/Deobap73/AI-image-generator/blob/d9fd3c4d379a7a6a61c1caed46c357492bcf6a70/client/src/assets/ImageAIGeneratorGererateImagePage.png)
+## License
 
+This project is licensed under the ISC License.
+
+![Screenshots](https://github.com/NULL0M/image-gen/blob/636990df5b7e0895168db1aa2a6690376795350a/client/src/assets/ImageAIGeneratorHomePage.png)
